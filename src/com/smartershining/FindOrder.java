@@ -31,7 +31,7 @@ import java.util.*;
  * Another correct ordering is[0,2,1,3].
  */
 public class FindOrder {
-    public static int[] findOrder(int numCourses, int[][] prerequisites) {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
         List<Set<Integer>> adjLists = new ArrayList<Set<Integer>>();
          for (int i = 0; i < numCourses; i++) {
              adjLists.add(new HashSet<Integer>());
