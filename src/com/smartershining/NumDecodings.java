@@ -19,7 +19,7 @@ package com.smartershining;
  * <p>
  * The number of ways decoding "12" is 2
  */
-public class numDecodings {
+public class NumDecodings {
     public int numDecodings(String s) {
         if (s == null || s.length() == 0 || s.equals("0")) {
             return 0;

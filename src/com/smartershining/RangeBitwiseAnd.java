@@ -3,17 +3,21 @@ package com.smartershining;
 /**
  * Created by smartershining on 16-5-9.
  */
+
+/**
+ * Given a range [m, n] where 0 <= m <= n <= 2147483647, return the bitwise AND
+ * of all numbers in this range, inclusive.
+ * <p>
+ * For example, given the range [5, 7], you should return 4.
+ */
 public class RangeBitwiseAnd {
     public static int rangeBitwiseAnd(int n, int m) {
-        int sum = n;
-        for (int i = n + 1; i <= m; i++) {
-            sum = sum & i;
+        int i = 0;
+        while (m != n) {
+            m >>= 1;
+            n >>= 1;
+            ++i;
         }
-        return sum;
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println(rangeBitwiseAnd(5, 7));
+        return m << i;
     }
 }
