@@ -1,5 +1,8 @@
 package com.smartershining;
 
+import java.util.Scanner;
+import java.util.StringJoiner;
+
 /**
  * Created by smartershining on 16-8-2.
  */
@@ -36,5 +39,27 @@ public class TotalNQueens {
         return true;
     }
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long number = scanner.nextLong();
+        String str = getResult(number);
+        System.out.println(str);
+    }
 
+    public static String getResult(Long number) {
+        StringBuilder result = new StringBuilder("");
+        int i = 2;
+        while (number > 1) {
+
+            while (number % i == 0) {
+                result.append(String.valueOf(i) + " ");
+                number /= i;
+            }
+            i++;
+        }
+        result.deleteCharAt(result.length() - 1);
+        return result.toString();
+    }
 }
+
+
